@@ -29,7 +29,8 @@ jobs:
           else
             echo "Nope!"; exit 1
           fi
-      -  print_pipeline_id
+      - run:
+        when: on_fail
 workflows:
   my_workflow:
     jobs:
