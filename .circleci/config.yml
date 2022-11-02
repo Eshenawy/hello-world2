@@ -31,7 +31,7 @@ jobs:
           fi
       - run:
           name: Upload Failed Tests
-          command: print_pipeline_id
+          command: echo "Hello Error"
           when: on_fail          
 
 
