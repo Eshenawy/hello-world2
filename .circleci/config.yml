@@ -29,6 +29,15 @@ jobs:
           else
             echo "Nope!"; exit 1
           fi
+          
+  failjob:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run:
+          name: Upload Failed Tests
+          command: print_pipeline_id
+          when: on_fail
 
 workflows:
   my_workflow:
