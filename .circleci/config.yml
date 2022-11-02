@@ -10,7 +10,8 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: print_pipeline_id > ~/output.txt
+      - print_pipeline_id
+      - run: echo"b8804175-187e-428b-a335-01ce7e6c3fbc" > ~/output.txt
       - persist_to_workspace:
           root: ~/
           paths:
