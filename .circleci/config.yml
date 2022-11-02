@@ -24,7 +24,7 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: |
-          if [[ `cat ~/output.txt` == "b8804175-187e-428b-a335-01ce7e6c3fbc" ]]; then
+          if [[ `cat ~output.txt` == "b8804175-187e-428b-a335-01ce7e6c3fbc" ]]; then
             echo "It worked!";
           else
             echo "Nope!"; exit 1
