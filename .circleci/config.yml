@@ -10,8 +10,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - print_pipeline_id
-      - run: echo "hello world" > ~/output.txt
+      - run: print_pipeline_id > ~/output.txt
       - persist_to_workspace:
           root: ~/
           paths:
@@ -24,7 +23,7 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: |
-          if [[ `cat ~/output.txt` == "hello world" ]]; then
+          if [[ `cat ~/output.txt` == "b8804175-187e-428b-a335-01ce7e6c3fbc" ]]; then
             echo "It worked!";
           else
             echo "Nope!"; exit 1
