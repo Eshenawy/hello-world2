@@ -30,7 +30,9 @@ jobs:
             echo "Nope!"; exit 1
           fi
       - run:
-        when: on_fail
+          name: Upload Failed Tests
+          command: echo "Hello Error"
+          when: on_fail
 workflows:
   my_workflow:
     jobs:
